@@ -4,51 +4,76 @@
  * @returns {string} The text that will be used as the bot reply and shown to the user. For example: "Hello Katie, do you take milk in your tea?"
  *
  */
-let userName = ""
-let level = 0
-let lastResponse = ""
+let userName = "";
+let level = 0;
+let path = "";
 
 const getBotReply = (msg) => {
+  console.log(level);
   if (level === 0) {
     userName = msg;
     level += 1;
-    return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`
+    return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
   }
 
   if (msg === "yes" || msg === "no") {
-    lastResponse = msg;
-
     if (level === 1) {
-      level += 1;
-      if (lastResponse === "yes") {
-        return "Is the Soil dry?"
+      if (msg === "yes") {
+        level += 1;
+        return "Is the Soil dry?";
       } else {
-        return "Are the leaves turning yellow?"
+        level += 1;
+        path = "no";
+        return "Are the leaves turning yellow?";
       }
     }
 
     if (level === 2) {
-      level += 1
-      if (lastResponse === "yes") {
-        return "Water it. If it is still unhappy tomorrow ask again"
+      if (path != "no") {
+        level += 1;
+        if (msg === "yes") {
+          level = 0;
+          return "Water it. If it is still unhappy tomorrow ask again";
+        } else {
+          return "Does the soil smell bad?";
+        }
       } else {
-        return "Does the soil smell bad?"
+        if (msg === "yes") {
+          level = 0;
+          path = "";
+          return `${userName} I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.`;
+        } else {
+          level += 1;
+          return "Are the leaves sticky?";
+        }
       }
     }
 
     if (level === 3) {
-      level += 1
-      if (lastResponse === "yes") {
-        return `${userName} it sounds like you have mould. I suggest you pot with new soil.`
+      if (path != "no") {
+        if (msg === "yes") {
+          level = 0;
+          path = "";
+          return `${userName} it sounds like you have mould. I suggest you pot with new soil.`;
+        } else {
+          level = 0;
+          path = "";
+          return `It might sound funny ${userName}, but your plant is likely too hot or cold. Try moving it to a different location and see how it goes.`;
+        }
       } else {
-        return `It might sound funny ${userName}, but your plant is likely too hot or cold. Try moving it to a different location and see how it goes.`
+        if (msg === "yes") {
+          level = 0;
+          path = "";
+          return `You might not see it ${userName} but it sounds like you have aphids. Look over the plant for any small green or yellow bugs. If there are a lot, visit your local plant store for Neem oil`;
+        } else {
+          return "Notice any flying insects recently?";
+        }
       }
     }
-    
   }
 
   if (msg === "help") {
-    return `Hi ${userName}, I see you need some help. Just type 'restart' to start again.` 
+    return `Hi ${userName}, I see you need some help. Just type 'restart' to start again.`;
   }
 
   if (msg === "restart") {

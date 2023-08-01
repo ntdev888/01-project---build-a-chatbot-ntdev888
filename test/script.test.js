@@ -78,3 +78,47 @@ describe("getBotReply", () => {
   });
 });
 
+describe("getBotReply", () => {
+  it("should reply with 'Harry, no yes'", () => {
+    const botReply1 = getBotReply("Harry");
+    const expectedReply1 =
+      "Hello Harry lets see if I can help you with your plant today. Is your plant wilting?";
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("no");
+    const expectedReply2 = "Are the leaves turning yellow?";
+    expect(botReply2).toEqual(expectedReply2);
+
+    const botReply3 = getBotReply("yes");
+    const expectedReply3 = "Harry I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.";
+    expect(botReply3).toEqual(expectedReply3);
+
+    // Uncomment the following line and update your expectation
+    // expect(botReply1).toEqual(expectedReply1);
+  });
+});
+
+describe("getBotReply", () => {
+  it("should reply with 'Harry, no no yes'", () => {
+    const botReply1 = getBotReply("Harry");
+    const expectedReply1 =
+      "Hello Harry lets see if I can help you with your plant today. Is your plant wilting?";
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("no");
+    const expectedReply2 = "Are the leaves turning yellow?";
+    expect(botReply2).toEqual(expectedReply2);
+
+    const botReply3 = getBotReply("no");
+    const expectedReply3 = "Are the leaves sticky?";
+    expect(botReply3).toEqual(expectedReply3);
+
+    const botReply4 = getBotReply("yes");
+    const expectedReply4 =
+      "You might not see it Harry but it sounds like you have aphids. Look over the plant for any small green or yellow bugs. If there are a lot, visit your local plant store for Neem oil";
+    expect(botReply4).toEqual(expectedReply4);
+    // Uncomment the following line and update your expectation
+    // expect(botReply1).toEqual(expectedReply1);
+  });
+});
+
