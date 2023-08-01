@@ -25,8 +25,6 @@ describe("getBotReply", () => {
     const expectedReply3 =
       "Water it. If it is still unhappy tomorrow ask again";
     expect(botReply3).toEqual(expectedReply3);
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -49,8 +47,6 @@ describe("getBotReply", () => {
     const expectedReply4 =
       "Harry it sounds like you have mould. I suggest you pot with new soil.";
     expect(botReply4).toEqual(expectedReply4);
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -73,8 +69,6 @@ describe("getBotReply", () => {
     const expectedReply4 =
       "It might sound funny Harry, but your plant is likely too hot or cold. Try moving it to a different location and see how it goes.";
     expect(botReply4).toEqual(expectedReply4);
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -92,9 +86,6 @@ describe("getBotReply", () => {
     const botReply3 = getBotReply("yes");
     const expectedReply3 = "Harry I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.";
     expect(botReply3).toEqual(expectedReply3);
-
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -117,8 +108,6 @@ describe("getBotReply", () => {
     const expectedReply4 =
       "You might not see it Harry but it sounds like you have aphids. Look over the plant for any small green or yellow bugs. If there are a lot, visit your local plant store for Neem oil";
     expect(botReply4).toEqual(expectedReply4);
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -146,9 +135,6 @@ describe("getBotReply", () => {
     const expectedReply5 =
       "Try a pyrethrym spray to see if the plant improves over the coming days."
     expect(botReply5).toEqual(expectedReply5);
-
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
@@ -176,9 +162,6 @@ describe("getBotReply", () => {
     const expectedReply5 =
       "Steve it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow."
     expect(botReply5).toEqual(expectedReply5);
-
-    // Uncomment the following line and update your expectation
-    // expect(botReply1).toEqual(expectedReply1);
   });
 });
 
