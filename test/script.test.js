@@ -84,7 +84,8 @@ describe("getBotReply", () => {
     expect(botReply2).toEqual(expectedReply2);
 
     const botReply3 = getBotReply("yes");
-    const expectedReply3 = "Harry I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.";
+    const expectedReply3 =
+      "Harry I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.";
     expect(botReply3).toEqual(expectedReply3);
   });
 });
@@ -127,13 +128,12 @@ describe("getBotReply", () => {
     expect(botReply3).toEqual(expectedReply3);
 
     const botReply4 = getBotReply("no");
-    const expectedReply4 =
-      "Notice any flying insects recently?"
+    const expectedReply4 = "Notice any flying insects recently?";
     expect(botReply4).toEqual(expectedReply4);
 
     const botReply5 = getBotReply("yes");
     const expectedReply5 =
-      "Try a pyrethrym spray to see if the plant improves over the coming days."
+      "Try a pyrethrym spray to see if the plant improves over the coming days.";
     expect(botReply5).toEqual(expectedReply5);
   });
 });
@@ -154,13 +154,12 @@ describe("getBotReply", () => {
     expect(botReply3).toEqual(expectedReply3);
 
     const botReply4 = getBotReply("no");
-    const expectedReply4 =
-      "Notice any flying insects recently?"
+    const expectedReply4 = "Notice any flying insects recently?";
     expect(botReply4).toEqual(expectedReply4);
 
     const botReply5 = getBotReply("no");
     const expectedReply5 =
-      "Steve it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow."
+      "Steve it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow.";
     expect(botReply5).toEqual(expectedReply5);
   });
 });
@@ -173,7 +172,8 @@ describe("getBotReply", () => {
     expect(botReply1).toEqual(expectedReply1);
 
     const botReply2 = getBotReply("help");
-    const expectedReply2 = "Hi Steve, I see you need some help. Just type 'restart' to start again.";
+    const expectedReply2 =
+      "Hi Steve, I see you need some help. Just type 'restart' to start again.";
     expect(botReply2).toEqual(expectedReply2);
   });
 });
