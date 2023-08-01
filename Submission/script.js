@@ -20,10 +20,10 @@ const getBotReply = (msg) => {
       path = "";
       level += 1;
       return `Welcome back ${userName}, is your plant wilting?`;
-    } else { 
-        userName = msg;
-        level += 1;
-        return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
+    } else {
+      userName = msg;
+      level += 1;
+      return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
     }
   }
 
