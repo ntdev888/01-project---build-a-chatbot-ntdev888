@@ -122,3 +122,75 @@ describe("getBotReply", () => {
   });
 });
 
+describe("getBotReply", () => {
+  it("should reply with 'Harry, no no no yes'", () => {
+    const botReply1 = getBotReply("Harry");
+    const expectedReply1 =
+      "Hello Harry lets see if I can help you with your plant today. Is your plant wilting?";
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("no");
+    const expectedReply2 = "Are the leaves turning yellow?";
+    expect(botReply2).toEqual(expectedReply2);
+
+    const botReply3 = getBotReply("no");
+    const expectedReply3 = "Are the leaves sticky?";
+    expect(botReply3).toEqual(expectedReply3);
+
+    const botReply4 = getBotReply("no");
+    const expectedReply4 =
+      "Notice any flying insects recently?"
+    expect(botReply4).toEqual(expectedReply4);
+
+    const botReply5 = getBotReply("yes");
+    const expectedReply5 =
+      "Try a pyrethrym spray to see if the plant improves over the coming days."
+    expect(botReply5).toEqual(expectedReply5);
+
+    // Uncomment the following line and update your expectation
+    // expect(botReply1).toEqual(expectedReply1);
+  });
+});
+
+describe("getBotReply", () => {
+  it("should reply with 'Steve, no no no no'", () => {
+    const botReply1 = getBotReply("Steve");
+    const expectedReply1 =
+      "Hello Steve lets see if I can help you with your plant today. Is your plant wilting?";
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("no");
+    const expectedReply2 = "Are the leaves turning yellow?";
+    expect(botReply2).toEqual(expectedReply2);
+
+    const botReply3 = getBotReply("no");
+    const expectedReply3 = "Are the leaves sticky?";
+    expect(botReply3).toEqual(expectedReply3);
+
+    const botReply4 = getBotReply("no");
+    const expectedReply4 =
+      "Notice any flying insects recently?"
+    expect(botReply4).toEqual(expectedReply4);
+
+    const botReply5 = getBotReply("no");
+    const expectedReply5 =
+      "Steve it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow."
+    expect(botReply5).toEqual(expectedReply5);
+
+    // Uncomment the following line and update your expectation
+    // expect(botReply1).toEqual(expectedReply1);
+  });
+});
+
+describe("getBotReply", () => {
+  it("should reply with 'Steve, help'", () => {
+    const botReply1 = getBotReply("Steve");
+    const expectedReply1 =
+      "Hello Steve lets see if I can help you with your plant today. Is your plant wilting?";
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("help");
+    const expectedReply2 = "Hi Steve, I see you need some help. Just type 'restart' to start again.";
+    expect(botReply2).toEqual(expectedReply2);
+  });
+});

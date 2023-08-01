@@ -8,6 +8,11 @@ let userName = "";
 let level = 0;
 let path = "";
 
+let reset = () => {
+  level = 0;
+  path = "";
+}
+
 const getBotReply = (msg) => {
   console.log(level);
   if (level === 0) {
@@ -32,15 +37,14 @@ const getBotReply = (msg) => {
       if (path != "no") {
         level += 1;
         if (msg === "yes") {
-          level = 0;
+          reset();
           return "Water it. If it is still unhappy tomorrow ask again";
         } else {
           return "Does the soil smell bad?";
         }
       } else {
         if (msg === "yes") {
-          level = 0;
-          path = "";
+          reset();
           return `${userName} I think your plant needs some food. Nitrogen is an important part of a plants diet. Try some slow release food pallets and place on the soil with water. Check back in a few days.`;
         } else {
           level += 1;
@@ -52,22 +56,30 @@ const getBotReply = (msg) => {
     if (level === 3) {
       if (path != "no") {
         if (msg === "yes") {
-          level = 0;
-          path = "";
+          reset();
           return `${userName} it sounds like you have mould. I suggest you pot with new soil.`;
         } else {
-          level = 0;
-          path = "";
+          reset();
           return `It might sound funny ${userName}, but your plant is likely too hot or cold. Try moving it to a different location and see how it goes.`;
         }
       } else {
         if (msg === "yes") {
-          level = 0;
-          path = "";
+          reset();
           return `You might not see it ${userName} but it sounds like you have aphids. Look over the plant for any small green or yellow bugs. If there are a lot, visit your local plant store for Neem oil`;
         } else {
+          level += 1;
           return "Notice any flying insects recently?";
         }
+      }
+    }
+
+    if (level === 4) {
+      if (msg === "yes") {
+        reset();
+        return "Try a pyrethrym spray to see if the plant improves over the coming days."
+      } else {
+        reset();
+        return `${userName} it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow.` 
       }
     }
   }
