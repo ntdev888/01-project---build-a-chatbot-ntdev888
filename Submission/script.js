@@ -10,15 +10,23 @@ let path = "";
 
 let reset = () => {
   level = 0;
-  path = "";
-}
+  path = "reset";
+};
 
 const getBotReply = (msg) => {
   console.log(level);
   if (level === 0) {
-    userName = msg;
-    level += 1;
-    return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
+    if (path === "reset") {
+      path = "";
+      level += 1;
+      return `Welcome back ${userName}, is your plant wilting?`;
+    } else {
+      {
+        userName = msg;
+        level += 1;
+        return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
+      }
+    }
   }
 
   if (msg === "yes" || msg === "no") {
@@ -76,10 +84,10 @@ const getBotReply = (msg) => {
     if (level === 4) {
       if (msg === "yes") {
         reset();
-        return "Try a pyrethrym spray to see if the plant improves over the coming days."
+        return "Try a pyrethrym spray to see if the plant improves over the coming days.";
       } else {
         reset();
-        return `${userName} it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow.` 
+        return `${userName} it sounds like your plant might not be getting enough light. Try relocate it to a sunnier spot and see how it is tomorrow.`;
       }
     }
   }
