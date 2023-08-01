@@ -8,7 +8,7 @@ let userName = "";
 let level = 0;
 let path = "";
 
-let reset = () => {
+const reset = () => {
   level = 0;
   path = "reset";
 };
@@ -20,12 +20,10 @@ const getBotReply = (msg) => {
       path = "";
       level += 1;
       return `Welcome back ${userName}, is your plant wilting?`;
-    } else {
-      {
+    } else { 
         userName = msg;
         level += 1;
         return `Hello ${userName} lets see if I can help you with your plant today. Is your plant wilting?`;
-      }
     }
   }
 
@@ -42,7 +40,7 @@ const getBotReply = (msg) => {
     }
 
     if (level === 2) {
-      if (path != "no") {
+      if (path !== "no") {
         level += 1;
         if (msg === "yes") {
           reset();
@@ -62,7 +60,7 @@ const getBotReply = (msg) => {
     }
 
     if (level === 3) {
-      if (path != "no") {
+      if (path !== "no") {
         if (msg === "yes") {
           reset();
           return `${userName} it sounds like you have mould. I suggest you pot with new soil.`;
@@ -97,7 +95,7 @@ const getBotReply = (msg) => {
   }
 
   if (msg === "restart") {
-    location.reload();
+    window.reload();
   }
 
   return "Please reply with help, restart and yes or no answers";
